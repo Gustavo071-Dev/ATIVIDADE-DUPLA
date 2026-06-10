@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styles from './Home.module.css';
+import './style.css'
 
 export default function Home() {
   // Lista de imagens para a galeria de fotos do topo (salve na pasta assets)
