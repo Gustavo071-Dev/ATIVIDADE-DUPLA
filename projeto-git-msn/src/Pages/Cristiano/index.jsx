@@ -1,135 +1,117 @@
 
-import './style.css'
-
-export default function Home() {
-  // Lista de imagens para a galeria de fotos do topo (salve na pasta assets)
-  const fotosGaleria = [gi
-    "/src/assets/cr7-galeria1.jpg",
-    "/src/assets/cr7-galeria2.jpg",
-    "/src/assets/cr7-galeria3.jpg"
-  ];
-
-  const [fotoAtual, setFotoAtual] = useState(0);
-
-  const proximaFoto = () => {
-    setFotoAtual((prev) => (prev === fotosGaleria.length - 1 ? 0 : prev + 1));
-  };
-
-  const fotoAnterior = () => {
-    setFotoAtual((prev) => (prev === 0 ? fotosGaleria.length - 1 : prev - 1));
-  };
-
+import React from 'react';
+import './style.css';
+export default function Cristiano() {
   return (
-    <div className={styles.container}>
-      
-      {/* Título Principal */}
-      <main className={styles.content}>
-        <h1 className={styles.mainTitle}>CRISTIANO RONALDO</h1>
+    <div className='page-cristiano'>
+      {/* Banner Principal */}
+      <header className="cristiano-hero">
+        <div className="hero-content">
+          <span className="jersey-number">Cristiano Ronaldo #7</span>
+          <h1>O Robozão Implacável</h1>
+          <p>Trabalho duro, foco obsessivo e a máquina definitiva de fazer gols.</p>
+        </div>
+      </header>
 
-        {/* Galeria de Fotos com Setinhas */}
-        <section className={styles.galeriaContainer}>
-          <button className={`${styles.seta} ${styles.setaEsquerda}`} onClick={fotoAnterior}>
-            &#10094;
-          </button>
-          <div className={styles.slide}>
-            <img 
-              src={fotosGaleria[fotoAtual]} 
-              alt={`Cristiano Ronaldo - Foto ${fotoAtual + 1}`} 
-              className={styles.imagemGaleria}
-            />
-          </div>
-          <button className={`${styles.seta} ${styles.setaDireita}`} onClick={proximaFoto}>
-            &#10095;
-          </button>
-        </section>
-
-        {/* Trajetória dos Times (Ordem Cronológica Exata) */}
-        <section className={styles.trajetoriaSection}>
+      {/* Trajetória por Clubes */}
+      <main className="timeline-container">
+        <h2>A Trajetória do Craque</h2>
+        
+        <div className="timeline">
           
-          {/* 1. Sporting CP */}
-          <div className={styles.timeCard}>
-            <h2>Sporting CP</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-sporting.jpg" alt="Cristiano Ronaldo no Sporting" />
+          {/* Sporting */}
+          <section className="timeline-item sporting">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-sporting.jpg" alt="Cristiano Ronaldo no Sporting" onError={(e) => e.target.style.display = 'none'} />
             </div>
-            <p className={styles.textoTime}>
-              Onde tudo começou. Revelado nas categorias de base do Sporting em Portugal, o jovem extremamente habilidoso impressionou o mundo logo nos seus primeiros jogos profissionais. Sua atuação em um amistoso contra o Manchester United em 2003 foi tão avassaladora que os próprios jogadores ingleses pediram sua contratação a Sir Alex Ferguson.
-            </p>
-          </div>
-
-          {/* 2. Manchester United */}
-          <div className={styles.timeCard}>
-            <h2>Manchester United</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-united1.jpg" alt="Cristiano Ronaldo no Manchester United" />
+            <div className="timeline-text">
+              <h3>Sporting CP (2002 - 2003)</h3>
+              <p>
+                Onde tudo começou. Criado nas categorias de base do Sporting em Portugal, o jovem franzino e cheio de firulas rapidamente subiu aos profissionais. Sua atuação genial num amistoso contra o Manchester United convenceu Sir Alex Ferguson a levá-lo imediatamente para a Inglaterra.
+              </p>
             </div>
-            <p className={styles.textoTime}>
-              Na Inglaterra, sob a batuta de Ferguson, CR7 se transformou de uma promessa a uma realidade implacável. Herdando a mítica camisa 7, ele desenvolveu seu físico, sua liderança e conquistou três Premier Leagues consecutivas, sua primeira Champions League e sua primeira Bola de Ouro em 2008.
-            </p>
-          </div>
+          </section>
 
-          {/* 3. Real Madrid */}
-          <div className={styles.timeCard}>
-            <h2>Real Madrid</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-real.jpg" alt="Cristiano Ronaldo no Real Madrid" />
+          {/* Manchester United - Primeira Passagem */}
+          <section className="timeline-item united-one">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-united1.jpg" alt="Cristiano Ronaldo no Manchester United" onError={(e) => e.target.style.display = 'none'} />
             </div>
-            <p className={styles.textoTime}>
-              O ápice da máquina. No clube merengue, Cristiano quebrou todos os recordes possíveis do futebol moderno, alcançando a histórica média de mais de um gol por partida (450 gols em 438 jogos). Foram 4 títulos de Champions League (sendo 3 seguidas), 4 Bolas de Ouro e noites mágicas que o consolidaram como o maior artilheiro da história do clube.
-            </p>
-          </div>
-
-          {/* 4. Juventus */}
-          <div className={styles.timeCard}>
-            <h2>Juventus</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-juventus.jpg" alt="Cristiano Ronaldo na Juventus" />
+            <div className="timeline-text">
+              <h3>Manchester United (2003 - 2009)</h3>
+              <p>
+                A transformação em um monstro. Sob a asa de Ferguson, assumiu a histórica camisa 7. Desenvolveu seu faro artilheiro, conquistou o Tri da Premier League, a Champions League (2007-08) e ganhou sua primeira Bola de Ouro, tornando-se o melhor jogador do planeta.
+              </p>
             </div>
-            <p className={styles.textoTime}>
-              Buscando novos desafios, transferiu-se para a Itália. Na Velha Senhora, continuou sua dinastia de títulos conquistando o Campeonato Italiano por duas vezes e quebrando recordes de gols rápidos no país, provando que sua mentalidade vencedora funcionava em qualquer liga do mundo.
-            </p>
-          </div>
+          </section>
 
-          {/* 5. Retorno ao Manchester United */}
-          <div className={styles.timeCard}>
-            <h2>Manchester United (O Retorno)</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-united2.jpg" alt="Cristiano Ronaldo no retorno ao United" />
+          {/* Real Madrid */}
+          <section className="timeline-item realmadrid">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-real.jpg" alt="Cristiano Ronaldo no Real Madrid" onError={(e) => e.target.style.display = 'none'} />
             </div>
-            <p className={styles.textoTime}>
-              Um retorno emocionante e muito festejado pela torcida em Old Trafford em 2021. Apesar do momento turbulento e de reconstrução que o clube inglês vivia internamente, Cristiano ainda entregou atuações espetaculares e muitos gols decisivos na Champions League e na Premier League.
-            </p>
-          </div>
-
-          {/* 6. Al-Nassr */}
-          <div className={styles.timeCard}>
-            <h2>Al-Nassr</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-alnassr.jpg" alt="Cristiano Ronaldo no Al-Nassr" />
+            <div className="timeline-text">
+              <h3>Real Madrid (2009 - 2018)</h3>
+              <p>
+                O ápice histórico. No Santiago Bernabéu, ele destruiu todas as estatísticas possíveis: marcou 450 gols em 438 jogos oficiais. Conquistou 4 títulos de Champions League (sendo 3 seguidas) e mais 4 Bolas de Ouro, virando a maior lenda moderna do clube merengue.
+              </p>
             </div>
-            <p className={styles.textoTime}>
-              Expandindo as fronteiras do esporte, CR7 mudou-se para a Arábia Saudita, transformando a liga local em um polo de atenção mundial e atraindo dezenas de craques europeus. Mesmo como veterano, seguiu quebrando recordes de gols e liderando o projeto do clube.
-            </p>
-          </div>
+          </section>
 
-          {/* 7. Seleção de Portugal */}
-          <div className={styles.timeCard}>
-            <h2>Seleção de Portugal</h2>
-            <div className={styles.fotoTime}>
-              <img src="/src/assets/cr7-portugal.jpg" alt="Cristiano Ronaldo em Portugal" />
+          {/* Juventus */}
+          <section className="timeline-item juventus">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-juventus.jpg" alt="Cristiano Ronaldo na Juventus" onError={(e) => e.target.style.display = 'none'} />
             </div>
-            <p className={styles.textoTime}>
-              O maior símbolo e capitão da história do futebol português. Cristiano levou seu país ao topo do continente com a conquista inédita da Eurocopa em 2016 e da Nations League em 2019. É o maior artilheiro isolado da história do futebol de seleções, carregando o orgulho de sua nação por mais de duas décadas.
-            </p>
-          </div>
+            <div className="timeline-text">
+              <h3>Juventus (2018 - 2021)</h3>
+              <p>
+                Dominando a Itália. Desembarcou em Turim com o status de rei e faturou o bicampeonato da Série A. Provou que seu instinto goleador e sua mentalidade cirúrgica funcionavam perfeitamente no tático e difícil futebol italiano.
+              </p>
+            </div>
+          </section>
 
-        </section>
+          {/* Manchester United - O Retorno */}
+          <section className="timeline-item united-two">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-united2.jpg" alt="Cristiano Ronaldo no retorno ao United" onError={(e) => e.target.style.display = 'none'} />
+            </div>
+            <div className="timeline-text">
+              <h3>Manchester United (2021 - 2022)</h3>
+              <p>
+                O "Last Dance" em Old Trafford. O bom filho a casa torna em um retorno apoteótico. Apesar do elenco passar por um momento coletivo muito conturbado, individualmente Cristiano foi o artilheiro do time na temporada, salvando a equipe com vários gols decisivos nos acréscimos.
+              </p>
+            </div>
+          </section>
+
+          {/* Al-Nassr */}
+          <section className="timeline-item alnassr">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-alnassr.jpg" alt="Cristiano Ronaldo no Al-Nassr" onError={(e) => e.target.style.display = 'none'} />
+            </div>
+            <div className="timeline-text">
+              <h3>Al-Nassr (2023 - Presente)</h3>
+              <p>
+                Pioneirismo na Ásia. Ao fechar com o clube saudita, Cristiano mudou os rumos do futebol mundial, abrindo as portas para que dezenas de astros europeus migrassem para o Oriente Médio. Segue quebrando recordes de gols mesmo jogando em alto nível como veterano.
+              </p>
+            </div>
+          </section>
+
+          {/* Seleção de Portugal */}
+          <section className="timeline-item portugal">
+            <div className="timeline-img">
+              <img src="/src/assets/cr7-portugal.jpg" alt="Cristiano Ronaldo na Seleção de Portugal" onError={(e) => e.target.style.display = 'none'} />
+            </div>
+            <div className="timeline-text">
+              <h3>Seleção de Portugal 🇵🇹</h3>
+              <p>
+                O herói de uma nação. Maior artilheiro da história do futebol de seleções. Comandou Portugal na conquista histórica da Eurocopa em 2016 e da primeira Nations League em 2019, eternizando de vez seu nome como o maior ícone do esporte português.
+              </p>
+            </div>
+          </section>
+
+        </div>
       </main>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} - O Legado de Cristiano Ronaldo.</p>
-      </footer>
     </div>
   );
 }
