@@ -1,160 +1,143 @@
-/* Configurações Globais da Página */
-.container {
-  background-color: #0c0808; /* Fundo preto com fundo sutil quente */
+/* Configurações de Reset e Base da Página */
+.page-cristiano {
+  background-color: #0d0707; /* Preto com fundo levemente quente */
   color: #ffffff;
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 }
 
-/* Conteúdo Centralizado */
-.content {
-  max-width: 850px;
+/* Banner Principal (Hero) */
+.cristiano-hero {
+  background: linear-gradient(135deg, #1f0406 0%, #0d0707 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid #e50914; /* Linha vermelha característica */
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.jersey-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d4af37; /* Dourado para os títulos e recordes */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.cristiano-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.cristiano-hero p {
+  font-size: 1.2rem;
+  color: #a0aec0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Container da Linha do Tempo */
+.timeline-container {
+  max-width: 900px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
 }
 
-/* Título Principal Imponente */
-.mainTitle {
-  font-size: 4rem;
-  font-weight: 900;
+.timeline-container h2 {
+  font-size: 2.2rem;
   text-align: center;
+  margin-bottom: 4rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 3rem;
-  background: linear-gradient(180deg, #ffffff 40%, #e50914 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 20px rgba(229, 9, 20, 0.2);
+  letter-spacing: 1px;
 }
 
-/* Galeria de Fotos */
-.galeriaContainer {
-  position: relative;
-  width: 100%;
-  height: 480px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(229, 9, 20, 0.15);
-  margin-bottom: 6rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-}
-
-.imagemGaleria {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Setinhas de Navegação */
-.seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(229, 9, 20, 0.8);
-  color: white;
-  border: none;
-  font-size: 1.6rem;
-  padding: 1rem 1.3rem;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background-color 0.3s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.seta:hover {
-  background-color: #ff1e27;
-  transform: translateY(-50%) scale(1.05);
-}
-
-.seta:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.setaEsquerda { left: 25px; }
-.setaDireita { right: 25px; }
-
-/* Seção da Trajetória (Cards dos Times) */
-.trajetoriaSection {
+/* Estrutura da Linha do Tempo */
+.timeline {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
 }
 
-.timeCard {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border-radius: 24px;
-  padding: 3rem;
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.3s, transform 0.3s;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.timeCard:hover {
-  border-color: rgba(229, 9, 20, 0.3);
-  transform: translateY(-4px);
+.timeline-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 9, 20, 0.3); /* Destaque vermelho ao passar o mouse */
 }
 
-.timeCard h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  color: #ffffff;
-  border-left: 6px solid #e50914; /* Detalhe em Vermelho CR7 */
-  padding-left: 1.2rem;
-  letter-spacing: -0.5px;
-}
-
-.fotoTime {
+/* Imagens dos Times */
+.timeline-img {
   width: 100%;
-  height: 380px;
-  border-radius: 16px;
+  height: 220px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: #1a1515; /* Fallback se a imagem falhar */
 }
 
-.fotoTime img {
+.timeline-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.textoTime {
-  font-size: 1.1rem;
-  line-height: 1.8;
+/* Texto dos Times */
+.timeline-text h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.timeline-text p {
+  font-size: 1rem;
+  line-height: 1.7;
   color: #cbd5e1;
   margin: 0;
   text-align: justify;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 4rem;
-  color: #4a5568;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(229, 9, 20, 0.1);
-  margin-top: 6rem;
-}
+/* Detalhes de Cores nas Bordas Esquerdas dos Títulos (Bordas personalizadas para simular os clubes) */
+.sporting h3     { border-left: 4px solid #008751; padding-left: 10px; } /* Verde Sporting */
+.united-one h3  { border-left: 4px solid #da291c; padding-left: 10px; } /* Vermelho United */
+.realmadrid h3  { border-left: 4px solid #febe10; padding-left: 10px; } /* Dourado Real */
+.juventus h3    { border-left: 4px solid #ffffff; padding-left: 10px; } /* Branco Juve */
+.united-two h3  { border-left: 4px solid #da291c; padding-left: 10px; } /* Vermelho United */
+.alnassr h3     { border-left: 4px solid #ffc20e; padding-left: 10px; } /* Amarelo Al-Nassr */
+.portugal h3    { border-left: 4px solid #e50914; padding-left: 10px; } /* Vermelho Portugal */
 
-/* Ajustes para Celular (Responsividade) */
+/* Responsividade para Celulares */
 @media (max-width: 768px) {
-  .mainTitle { font-size: 2.8rem; }
-  .galeriaContainer { height: 320px; }
-  .seta { padding: 0.8rem 1.1rem; font-size: 1.2rem; }
-  .setaEsquerda { left: 15px; }
-  .setaDireita { right: 15px; }
-  .fotoTime { height: 240px; }
-  .timeCard { padding: 1.8rem; }
-  .timeCard h2 { font-size: 1.8rem; }
-  .textoTime { font-size: 1rem; }
+  .cristiano-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 1fr; /* Vira uma coluna só no celular */
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .timeline-img {
+    height: 180px;
+  }
 }
