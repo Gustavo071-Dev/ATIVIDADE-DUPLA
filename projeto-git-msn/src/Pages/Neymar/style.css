@@ -1,0 +1,160 @@
+/* Base da Página do Neymar */
+.page-neymar {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0b0f19; /* Azul bem escuro, quase preto */
+  color: #f1f5f9;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Banner Hero principal */
+.neymar-hero {
+  background: linear-gradient(rgba(11, 15, 25, 0.7), #0b0f19), 
+              radial-gradient(circle at top right, rgba(34, 197, 94, 0.2), transparent);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.jersey-number {
+  color: #eab308; /* Amarelo ouro */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+.neymar-hero h1 {
+  font-size: 3.5rem;
+  margin: 15px 0;
+  font-weight: 800;
+  background: linear-gradient(45deg, #22c55e, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neymar-hero p {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container da Linha do Tempo */
+.timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #f8fafc;
+  position: relative;
+}
+
+.timeline-container h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #22c55e;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Estrutura da Linha do Tempo (Timeline) */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  background-color: #161e2e;
+  border-radius: 12px;
+  overflow: hidden;
+  border-left: 5px solid #22c55e; /* Borda verde padrão */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+}
+
+/* Espaço da Imagem */
+.timeline-img {
+  width: 40%;
+  min-width: 200px;
+  background-color: #1f293d; /* Placeholder enquanto não tem imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timeline-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Conteúdo de Texto */
+.timeline-text {
+  padding: 25px;
+  width: 60%;
+}
+
+.timeline-text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #f8fafc;
+}
+
+.timeline-text p {
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Cores específicas de borda por época/clube */
+.timeline-item.santos {
+  border-left-color: #ffffff; /* Alvinegro Praiano */
+}
+
+.timeline-item.barcelona {
+  border-left-color: #a8003a; /* Azulgrana */
+}
+
+.timeline-item.psg {
+  border-left-color: #002c5f; /* Azul Paris */
+}
+
+.timeline-item.alhilal {
+  border-left-color: #0054a6; /* Azul Hilal */
+}
+
+.timeline-item.selecao {
+  border-left-color: #eab308; /* Canarinho */
+  background: linear-gradient(90deg, #161e2e, rgba(34, 197, 94, 0.05));
+}
+
+/* Responsividade para telas de celulares */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+  .timeline-img {
+    width: 100%;
+    height: 180px;
+  }
+  .timeline-text {
+    width: 100%;
+  }
+  .neymar-hero h1 {
+    font-size: 2.5rem;
+  }
+}
